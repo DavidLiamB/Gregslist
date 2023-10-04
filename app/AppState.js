@@ -1,4 +1,5 @@
 import { Car } from "./models/Car.js"
+import { House } from "./models/House.js"
 import { Value } from "./models/Value.js"
 import { EventEmitter } from "./utils/EventEmitter.js"
 import { isValidProp } from "./utils/IsValidProp.js"
@@ -39,21 +40,24 @@ class ObservableAppState extends EventEmitter {
     }),
   ]
 
-  Houses = [{
-    housepic: 'https://images.unsplash.com/photo-1598977946456-ae589f348af6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGFiYW5kb25lZCUyMGhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60',
-    adress: 'Adress',
-    bedrooms: 0,
-    bathrooms: 0,
-    ftsquared: 0,
-    hoa: true,
-    inlivablecondition: false,
-    price: 0,
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam nobis repellat deleniti dolore sint. Incidunt exercitationem et ipsum dolores saepe nisi nesciunt, rerum voluptate animi consequuntur voluptatibus odit officia recusandae excepturi consequatur adipisci ducimus architecto laudantium eius possimus aut.'
-  }]
+  Houses = [
+    new House({
+      housepic: 'https://images.unsplash.com/photo-1598977946456-ae589f348af6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGFiYW5kb25lZCUyMGhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60',
+      adress: 'Adress',
+      bedrooms: 0,
+      bathrooms: 0,
+      ftsquared: 0,
+      hasHoa: true,
+      inlivablecondition: false,
+      price: 0,
+      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam nobis repellat deleniti dolore sint. Incidunt exercitationem et ipsum dolores saepe nisi nesciunt, rerum voluptate animi consequuntur voluptatibus odit officia recusandae excepturi consequatur adipisci ducimus architecto laudantium eius possimus aut.'
+    }),
+  ]
 
   // NOTE Used to load initial data
   init() {
     this.cars = loadState('cars', [Car])
+    this.Houses = loadState('Houses', [House])
   }
 
 }

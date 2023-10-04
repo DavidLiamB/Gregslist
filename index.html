@@ -44,6 +44,69 @@
     <!-- PRIMARY VIEWPORT -->
     <!-- TODO once you are on the houses page, write your HTML here -->
     <section class="row justify-content-center">
+      <div class="col-12 col-md-8">
+        <form onsubmit="app.HousesController.createHouse(event)">
+
+          <div class="mb-2">
+            <label for="adress">Adress</label>
+            <input id="adress" type="text" required minlength="5" maxlength="20" name="adress"
+              placeholder="Enter adress">
+          </div>
+
+          <div class="mb-2">
+            <label for="housepic">House Image</label>
+            <input id="housepic" type="url" required maxlength="200" name="housepic" placeholder="Enter House Image">
+          </div>
+
+          <div class="mb-2">
+            <label for="bedrooms">How many bedrooms</label>
+            <input id="bedrooms" type="number" required min="0" max="100" name="bedrooms"
+              placeholder="Enter the number of bedrooms">
+          </div>
+
+          <div class="mb-2">
+            <label for="bathrooms">How many bathrooms</label>
+            <input id="bathrooms" type="number" required min="0" max="100" name="bathrooms"
+              placeholder="Enter the number of bathrooms">
+          </div>
+
+          <div class="mb-2">
+            <label for="squarefeet">How much square feet</label>
+            <input id="squarefeet" type="number" required min="100" max="100000000" name="squarefeet"
+              placeholder="Enter the number of squarefeet">
+          </div>
+
+          <div class="mb-2 d-flex">
+            <div class="me-5">
+              <label for="hasHoa">Does the house have a HOA</label>
+              <input class="checkbox" id="hasHoa" type="checkbox" name="hasHoa">
+            </div>
+
+            <div>
+              <label for="inlivablecondition">can the house be lived in</label>
+              <input class="checkbox" id="inlivablecondition" type="checkbox" name="inlivablecondition">
+            </div>
+          </div>
+
+          <div class="mb-2">
+            <label for="price">what is the price of the house?</label>
+            <input id="price" type="number" required min="0" max="1000000000" name="price"
+              placeholder="Enter the price">
+          </div>
+
+          <div class="mb-2">
+            <label for="description">Description</label>
+            <textarea name="description" id="description" rows="5" placeholder="Enter Description..."
+              maxlength="300"></textarea>
+          </div>
+
+          <div>
+            <button class="btn btn-success" type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <section id="houses" class="row justify-content-center">
     </section>
 
   </main>

@@ -9,7 +9,7 @@ input {
 }
 
 textarea {
-  width: 50%;
+  width: 100%;
 }
 
 .checkbox {
@@ -22,7 +22,7 @@ textarea {
 }
 
 .img {
-  height: 40vh;
+  min-height: 40vh;
   width: 30%;
   object-fit: cover;
 }

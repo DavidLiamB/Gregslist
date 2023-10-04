@@ -2,7 +2,7 @@ import { generateId } from "../utils/GenerateId.js"
 
 export class House {
   /**
-   * @param {{ housepic: string; adress: string; bedrooms: number; bathrooms: number; ftsquared: number; hoa: boolean; inlivablecondition: boolean; price: number; timelisted: string | number | Date; description: string;}} data
+   * @param {{ housepic: string; adress: string; bedrooms: number; bathrooms: number; ftsquared: number; hasHoa: boolean; inlivablecondition: boolean; price: number; timelisted?: string | number | Date; description: string;}} data
    */
   constructor(data) {
     this.id = generateId()
@@ -11,7 +11,7 @@ export class House {
     this.bedrooms = data.bedrooms
     this.bathrooms = data.bathrooms
     this.ftsquared = data.ftsquared
-    this.hoa = data.hoa
+    this.hasHoa = data.hasHoa
     this.inlivablecondition = data.inlivablecondition
     this.price = data.price
     this.description = data.description
@@ -23,13 +23,13 @@ export class House {
     <div class="col-10 shadow d-flex mt-2">
         <img class="img"
           src="${this.housepic}"
-          alt="adress">
+          alt="${this.adress}">
         <div class="p-2 bebigger">
           <h3>${this.adress}</h3>
           <p>${this.timelisted}</p>
-          <h5>ft^2</h5>
+          <h5>${this.ftsquared}</h5>
           <h6><i class="mdi mdi-bed-empty"></i>: ${this.bedrooms} <i class="mdi mdi-shower"></i>: ${this.bathrooms}</h6>
-          <p>${this.hoa ? '<i class="mdi mdi-check-bold"></i>has hoa' : '<i class="mdi mdi-close-thick"></i>no hoa'}</p>
+          <p>${this.hasHoa ? '<i class="mdi mdi-check-bold"></i>has hoa' : '<i class="mdi mdi-close-thick"></i>no hoa'}</p>
           <p>${this.inlivablecondition ? '<i class="mdi mdi-check-bold"></i>can move right in' : '<i class="mdi mdi-close-thick"></i>needs fixing'}</p>
         </div>
         <div class="p-2">

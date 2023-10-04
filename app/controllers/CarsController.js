@@ -12,7 +12,7 @@ function _drawCars() {
 }
 
 export class CarsController {
-  constructor () {
+  constructor() {
     console.log('Cars Controller is loaded', AppState.cars);
     _drawCars()
 
